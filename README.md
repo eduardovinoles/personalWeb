@@ -107,4 +107,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 Feel free to connect with me:
 
 - Email: [eduardovinoles@gmail.com](mailto:eduardovinoles@gmail.com)
-- LinkedIn: [https://www.linkedin.com/in/eduardo-vi%C3%B1oles?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnGyEDrPJSnu4SutVhKVUVQ%3D%3D](https://linkedin.com/in/eduardo)
+- LinkedIn: [[https://www.linkedin.com/in/eduardo-vi%C3%B1oles?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnGyEDrPJSnu4SutVhKVUVQ%3D%3D](https://www.linkedin.com/in/eduardo-vi%C3%B1oles/)]([https://linkedin.com/in/eduardo](https://www.linkedin.com/in/eduardo-vi%C3%B1oles/))
