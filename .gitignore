@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
+!dist/*  # Allow dist to be tracked for GitHub Pages deployment
+
 dist-ssr
 *.local
 
