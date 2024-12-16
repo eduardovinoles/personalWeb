@@ -129,7 +129,7 @@ import tag4 from "./work5/tag4.png";
 import tag5 from "./work5/tag5.png";
 import tag6 from "./work5/tag6.png";
 
-import more from "../../public/videos/more.mp4";
+import more from "/personalWeb/videos/more.mp4";
 
 export {
   brainwave,

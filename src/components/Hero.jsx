@@ -13,9 +13,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { edusticker } from "../assets";
 
 const videoSlides = [
-  { src: "/videos/cramiV3.mp4", alt: "Video 1" },
-  { src: "/videos/driverV1.mp4", alt: "Video 2" },
-  { src: "/videos/indulgeV1.mp4", alt: "Video 3" },
+  { src: "/personalWeb/videos/cramiV3.mp4", alt: "Video 1" },
+  { src: "/personalWeb/videos/driverV1.mp4", alt: "Video 2" },
+  { src: "/personalWeb/videos/indulgeV1.mp4", alt: "Video 3" },
 ];
 
 const Hero = () => {
