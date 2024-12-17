@@ -4,23 +4,35 @@ import { curve, heroBackground } from "../assets";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { edusticker } from "../assets";
+import Header from "./Header";
+import { Modal } from "./design/Detail";
+import { ContactMe } from "./design/Contact";
 
 const videoSlides = [
-  { src: "/personalWeb/videos/cramiV3.mp4", alt: "Video 1" },
-  { src: "/personalWeb/videos/driverV1.mp4", alt: "Video 2" },
-  { src: "/personalWeb/videos/indulgeV1.mp4", alt: "Video 3" },
+  { src: "../../public/videos/cramiV3.mp4", alt: "Video 1" },
+  { src: "../../public/videos/driverV1.mp4", alt: "Video 2" },
+  { src: "../../public/videos/indulgeV1.mp4", alt: "Video 3" },
 ];
 
 const Hero = () => {
   const parallaxRef = useRef(null);
   const videoRefs = useRef([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleHeaderButtonClick = () => {
+    setModalOpen(true);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,8 +96,10 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
+      <Header onButtonClick={handleHeaderButtonClick} />
+
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb:[6rem]">
+        <div className="relative z-1 max-w-auto mx-auto text-center mb-[4rem] md:mb-20 lg:mb:[6rem]">
           <h1 className="h1 mb-6">
             Hello! I’m&nbsp;
             <span className="inline-block relative">
@@ -109,7 +123,9 @@ const Hero = () => {
             </span>{" "}
             passionate about crafting intuitive and elegant mobile applications.
           </p>
-          <Button white>Get started</Button>
+          <Button white onClick={handleHeaderButtonClick}>
+            Get in touch
+          </Button>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl sm:mb-24 xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
@@ -189,6 +205,9 @@ const Hero = () => {
         </div>
         <BackgroundCircles />
         <CompanyLogos />
+        <Modal id={"contact"} isOpen={isModalOpen} onClose={closeModal}>
+          <ContactMe />
+        </Modal>
       </div>
       <BottomLine />
     </Section>

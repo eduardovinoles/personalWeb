@@ -24,10 +24,10 @@ export const ContactMe = () => {
 
     emailjs
       .send(
-        "service_dq9txkw", // Replace with your EmailJS service ID
-        "template_gyz56dh", // Replace with your EmailJS template ID
-        formData, // Pass the formData object
-        "_WRwKs5Bqmw5gPZxY" // Replace with your EmailJS public key
+        "service_dq9txkw",
+        "template_gyz56dh",
+        formData,
+        "_WRwKs5Bqmw5gPZxY"
       )
       .then(
         (result) => {
@@ -42,10 +42,9 @@ export const ContactMe = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4 md:px-8">
+    <div className="h-auto w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] p-8 flex flex-col justify-center items-center bg-black rounded-3xl">
       {isSubmitted ? (
-        // Show a confirmation message after the form is submitted
-        <div className="bg-conic-gradient text-black p-6 rounded-lg">
+        <div className="bg-conic-gradient text-black p-6 rounded-lg w-full text-center">
           <h1 className="text-3xl font-bold mb-4">Thank You!</h1>
           <p className="text-xl">
             Your message has been sent successfully. I'll get back to you as
@@ -53,19 +52,21 @@ export const ContactMe = () => {
           </p>
         </div>
       ) : (
-        <>
-          <h1 className="h1 font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
-            Contact Me
-          </h1>
-          <p className="text-gray-300 mb-8 text-center max-w-md">
-            It would be a pleasure to hear from you <br />
-            <span className="font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
-              &nbsp;Reach out anytime!&nbsp;
-            </span>
-          </p>
+        <div className="rounded-lg w-full">
+          <div className="text-center mb-6">
+            <h1 className="h1 font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-4">
+              Contact Me
+            </h1>
+            <p className="text-gray-300 mb-8">
+              It would be a pleasure to hear from you <br />
+              <span className="font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
+                Reach out anytime!
+              </span>
+            </p>
+          </div>
 
           <form
-            className="w-full max-w-lg bg-gray-700  bg-opacity-50 text-white shadow-md rounded-lg p-8 relative z-10"
+            className="w-full bg-gray-700 bg-opacity-50 text-white shadow-md rounded-lg p-8"
             onSubmit={handleSubmit}
           >
             {/* Name Field */}
@@ -119,7 +120,7 @@ export const ContactMe = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-transparent border border-gray-300 rounded-lg shadow-sm  focus:ring-blue-300 p-2 h-28"
+                className="w-full bg-transparent border border-gray-300 rounded-lg shadow-sm focus:ring-blue-300 p-2 h-28"
                 required
               ></textarea>
             </div>
@@ -132,7 +133,7 @@ export const ContactMe = () => {
               Send Message
             </button>
           </form>
-        </>
+        </div>
       )}
     </div>
   );

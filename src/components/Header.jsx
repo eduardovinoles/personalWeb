@@ -7,7 +7,13 @@ import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-const Header = () => {
+export const Header = ({ onButtonClick }) => {
+  const handleContactClick = () => {
+    if (onButtonClick) {
+      onButtonClick();
+    }
+  };
+
   const location = useLocation();
   const navigate = useNavigate();
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -27,10 +33,6 @@ const Header = () => {
 
     enablePageScroll();
     setOpenNavigation(false);
-  };
-
-  const handleContactClick = () => {
-    navigate("/contact");
   };
 
   return (

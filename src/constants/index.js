@@ -86,6 +86,10 @@ import {
   tag5,
   tag6,
   more,
+  cramiV3,
+  driverV1,
+  indulgeV1,
+  cramiV1,
 } from "../assets";
 
 export const navigation = [
@@ -129,6 +133,8 @@ export const work5Icons = [react, aws, nodejs];
 export const work6 = [zipe1, zipe5, zipe6, zipe7, zipe8];
 export const work6BG = zipeBG;
 export const work6Icons = [swiftui];
+
+export const videoSlides = [cramiV1, driverV1, indulgeV1];
 
 export const heroIcons = [agile, notion, appstore, figma];
 

@@ -11,7 +11,6 @@ const App = () => {
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
         <Routes>
           <Route
             path="/"
@@ -21,10 +20,8 @@ const App = () => {
               </>
             }
           />
-          <Route path="/contact" element={<ContactMe />} />
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
-
         <Footer />
       </div>
       <ButtonGradient />
