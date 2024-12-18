@@ -74,6 +74,27 @@ const Benefits = () => {
       customPaddings
       id="mywork"
     >
+      {/* Modals*/}
+      <Modal id={selectedCardId} isOpen={isModalOpen} onClose={closeModal}>
+        {selectedCardId && (
+          <Card
+            title={"Tech"}
+            icons={cardAssets[selectedCardId].icons}
+            alt={selectedCardId}
+            images={cardAssets[selectedCardId].images[0]} // First image for main
+            additionalImages={cardAssets[selectedCardId].images} // All images for thumbnails
+            background={cardAssets[selectedCardId].background}
+          />
+        )}
+      </Modal>
+
+      <VideoModal
+        isOpen={isMoreModalOpen}
+        onClose={closeMoreModal}
+        videoUrl={moreComming}
+      />
+      {/* */}
+
       <div className="container relative z-2">
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
           <h1 className="h1 mb-6">
@@ -90,33 +111,15 @@ const Benefits = () => {
           </p>
         </div>
 
-        {/* Modal */}
-        <Modal id={selectedCardId} isOpen={isModalOpen} onClose={closeModal}>
-          {selectedCardId && (
-            <Card
-              title={"Tech"}
-              icons={cardAssets[selectedCardId].icons}
-              alt={selectedCardId}
-              images={cardAssets[selectedCardId].images[0]} // First image for main
-              additionalImages={cardAssets[selectedCardId].images} // All images for thumbnails
-              background={cardAssets[selectedCardId].background}
-            />
-          )}
-        </Modal>
-
-        <VideoModal
-          isOpen={isMoreModalOpen}
-          onClose={closeMoreModal}
-          videoUrl={moreComming}
-        />
-
         {/* Cards */}
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
               style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
+                backgroundImage: item.backgroundUrl
+                  ? `url(${item.backgroundUrl})`
+                  : "none",
               }}
               key={item.id}
               onClick={() => {
