@@ -6,14 +6,9 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { Link } from "react-router-dom";
 
-export const Header = ({ onButtonClick }) => {
-  const handleContactClick = () => {
-    if (onButtonClick) {
-      onButtonClick();
-    }
-  };
-
+export const Header = ({ onOpenModal }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -28,11 +23,32 @@ export const Header = ({ onButtonClick }) => {
     }
   };
 
-  const handleClick = () => {
-    if (!openNavigation) return;
+  // const handleClick = () => {
+  //   if (!openNavigation) return;
 
-    enablePageScroll();
-    setOpenNavigation(false);
+  //   enablePageScroll();
+  //   setOpenNavigation(false);
+  // };
+
+  const handleClick = (e) => {
+    // Check if the clicked link is a hash link
+    if (e.currentTarget.getAttribute("href")?.startsWith("#")) {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute("href").slice(1);
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+
+    if (openNavigation) {
+      enablePageScroll();
+      setOpenNavigation(false);
+    }
   };
 
   return (
@@ -51,28 +67,48 @@ export const Header = ({ onButtonClick }) => {
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-            {navigation.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
-                  item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
+            {navigation.map((item) =>
+              item.url.startsWith("#") ? (
+                // Hash links for smooth scrolling
+                <a
+                  key={item.id}
+                  href={item.url}
+                  onClick={handleClick}
+                  className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                    item.onlyMobile ? "lg:hidden" : ""
+                  } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
                 ${
                   item.url === location.pathname
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
-              >
-                {item.title}
-              </a>
-            ))}
+                >
+                  {item.title}
+                </a>
+              ) : (
+                // Regular router links
+                <Link
+                  key={item.id}
+                  to={item.url}
+                  onClick={handleClick}
+                  className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                    item.onlyMobile ? "lg:hidden" : ""
+                  } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
+                ${
+                  item.url === location.pathname
+                    ? "z-2 lg:text-n-1"
+                    : "lg:text-n-1/50"
+                } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                >
+                  {item.title}
+                </Link>
+              )
+            )}
           </div>
           <HamburgerMenu />
         </nav>
 
-        <Button className="hidden lg:flex" onClick={handleContactClick}>
+        <Button className="hidden lg:flex" onClick={onOpenModal}>
           Contact me
         </Button>
 

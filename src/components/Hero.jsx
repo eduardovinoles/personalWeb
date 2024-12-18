@@ -1,37 +1,31 @@
 import Section from "./Section";
 import Button from "./Button";
-import { curve, heroBackground } from "../assets";
+import { curve, heroBackground, edusticker } from "../assets";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
+import { heroIcons, videoSlides } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { edusticker } from "../assets";
 import Header from "./Header";
 import { Modal } from "./design/Detail";
 import { ContactMe } from "./design/Contact";
 
-const videoSlides = [
-  { src: "../../public/videos/cramiV3.mp4", alt: "Video 1" },
-  { src: "../../public/videos/driverV1.mp4", alt: "Video 2" },
-  { src: "../../public/videos/indulgeV1.mp4", alt: "Video 3" },
+const videosSlides = [
+  { src: videoSlides[0], alt: "Video 1" },
+  { src: videoSlides[1], alt: "Video 2" },
+  { src: videoSlides[2], alt: "Video 3" },
 ];
 
-const Hero = () => {
+const Hero = ({ isModalOpen, onCloseModal, onOpenModal }) => {
   const parallaxRef = useRef(null);
   const videoRefs = useRef([]);
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
 
   const handleHeaderButtonClick = () => {
-    setModalOpen(true);
+    onOpenModal();
   };
 
   useEffect(() => {
@@ -96,8 +90,6 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <Header onButtonClick={handleHeaderButtonClick} />
-
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-auto mx-auto text-center mb-[4rem] md:mb-20 lg:mb:[6rem]">
           <h1 className="h1 mb-6">
@@ -133,7 +125,7 @@ const Hero = () => {
               <div className="aspect-[33/40] rounded-b-[0.9rem] rounded-t-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 {/* Video carousel */}
                 <Slider {...sliderSettings}>
-                  {videoSlides.map((video, index) => (
+                  {videosSlides.map((video, index) => (
                     <div key={index}>
                       <video
                         ref={(el) => (videoRefs.current[index] = el)}
@@ -205,7 +197,7 @@ const Hero = () => {
         </div>
         <BackgroundCircles />
         <CompanyLogos />
-        <Modal id={"contact"} isOpen={isModalOpen} onClose={closeModal}>
+        <Modal id="contact" isOpen={isModalOpen} onClose={onCloseModal}>
           <ContactMe />
         </Modal>
       </div>

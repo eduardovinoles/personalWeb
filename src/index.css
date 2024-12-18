@@ -92,7 +92,8 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 80px;
-  flex-wrap: wrap; /* Allows for wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* Allows for wrapping on smaller screens */
 }
 
 .column {
@@ -109,13 +110,15 @@
 
 @media (max-width: 768px) {
   .columns-container {
-    flex-direction: column; /* Stack the paragraphs vertically on smaller screens */
+    flex-direction: column;
+    /* Stack the paragraphs vertically on smaller screens */
     align-items: center;
   }
 
   .column {
     text-align: center;
-    margin-bottom: 20px; /* Space between stacked columns */
+    margin-bottom: 20px;
+    /* Space between stacked columns */
   }
 
   .image-container {
@@ -125,25 +128,32 @@
   }
 
   .image-container img {
-    display: block; /* Prevent image from being treated as inline */
-    margin: 0; /* Reset margins */
+    display: block;
+    /* Prevent image from being treated as inline */
+    margin: 0;
+    /* Reset margins */
   }
 }
 
 /* Change color of inactive dots */
 .slick-dots li button::before {
-  color: #ccc !important; /* Set to your desired color */
-  opacity: 0.5 !important; /* Optional: Adjust opacity */
+  color: #ccc !important;
+  /* Set to your desired color */
+  opacity: 0.5 !important;
+  /* Optional: Adjust opacity */
 }
 
 /* Change color of active dot */
 .slick-dots li.slick-active button::before {
-  color: #ffa500 !important; /* Set to your desired color */
-  opacity: 1 !important; /* Optional: Set full opacity for active dot */
+  color: #ffa500 !important;
+  /* Set to your desired color */
+  opacity: 1 !important;
+  /* Optional: Set full opacity for active dot */
 }
 
 .modal-container {
-  @apply relative z-5 overflow-visible; /* Allow content inside modal to overflow */
+  @apply relative z-5 overflow-visible;
+  /* Allow content inside modal to overflow */
 }
 
 @keyframes modal-enter {
@@ -151,6 +161,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -162,6 +173,7 @@
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.9);
@@ -192,7 +204,8 @@
 
 /* Wrapper for the card content, to allow the image and text to be inside */
 .detail-wrapper {
-  @apply relative; /* Ensure the content is above the image */
+  @apply relative;
+  /* Ensure the content is above the image */
 }
 
 .detail-cardImgBG {
@@ -206,11 +219,13 @@
 
 /* Hover effect: move both the card and the image */
 .detail-card:hover {
-  @apply translate-y-[-0px]; /* Moves the whole card up */
+  @apply translate-y-[-0px];
+  /* Moves the whole card up */
 }
 
 .detail-card:hover .detail-cardImg {
-  @apply translate-y-[-75px] scale-150; /* Moves the image up more than the card */
+  @apply translate-y-[-75px] scale-150;
+  /* Moves the image up more than the card */
 }
 
 /* Heart icon (hover effect) */

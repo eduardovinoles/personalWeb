@@ -50,8 +50,6 @@ const CompanyLogos = ({ className }) => {
           ))}
         </ul>
       </div>
-
-      {/* BackgroundCircles2 */}
       <div className="absolute inset-0 -z-10">
         <BackgroundCircles2 />
       </div>

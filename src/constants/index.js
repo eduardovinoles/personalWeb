@@ -96,17 +96,17 @@ export const navigation = [
   {
     id: "0",
     title: "about",
-    url: "/#about",
+    url: "#about",
   },
   {
     id: "1",
     title: "mywork",
-    url: "/#mywork",
+    url: "#mywork",
   },
   {
     id: "2",
     title: "testimonials",
-    url: "/#testimonials",
+    url: "#testimonials",
   },
 ];
 
