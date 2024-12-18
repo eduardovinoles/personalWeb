@@ -3,12 +3,11 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: "/personalWeb/",
   build: {
-    outDir: "dist", // Default build output directory
+    outDir: "dist", // Output directory
+    assetsDir: "assets", // Directory for assets
     rollupOptions: {
-      input: "index.html", // Specify entry point
+      input: "src/main.jsx", // Correct path to the entry point
     },
   },
 });
