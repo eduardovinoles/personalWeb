@@ -129,11 +129,11 @@ import tag4 from "./work5/tag4.png";
 import tag5 from "./work5/tag5.png";
 import tag6 from "./work5/tag6.png";
 
-import more from "./more.mp4";
-import cramiV1 from "./cramiV1.mp4";
-import cramiV3 from "./cramiV3.mp4";
-import driverV1 from "./driverV1.mp4";
-import indulgeV1 from "./indulgeV1.mp4";
+import more from "../../public/more.mp4";
+import cramiV1 from "../../public/cramiV1.mp4";
+import cramiV3 from "../../public/cramiV3.mp4";
+import driverV1 from "../../public/driverV1.mp4";
+import indulgeV1 from "../../public/indulgeV1.mp4";
 
 export {
   cramiV1,

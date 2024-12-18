@@ -19,10 +19,11 @@ import { ContactMe } from "./design/Contact";
 //   { src: videoSlides[1], alt: "Video 2" },
 //   { src: videoSlides[2], alt: "Video 3" },
 // ];
+
 const videosSlides = [
-  { src: "/more.mp4", alt: "Video 1" },
-  { src: "/cramiV1.mp4", alt: "Video 2" },
-  { src: "/cramiV3.mp4", alt: "Video 3" },
+  { src: `${import.meta.env.BASE_URL}more.mp4`, alt: "Video 1" },
+  { src: `${import.meta.env.BASE_URL}cramiV1.mp4`, alt: "Video 2" },
+  { src: `${import.meta.env.BASE_URL}cramiV3.mp4`, alt: "Video 3" },
 ];
 
 const Hero = ({ isModalOpen, onCloseModal, onOpenModal }) => {
