@@ -21,8 +21,8 @@ import { ContactMe } from "./design/Contact";
 // ];
 
 const videosSlides = [
-  { src: `${import.meta.env.BASE_URL}more.mp4`, alt: "Video 1" },
-  { src: `${import.meta.env.BASE_URL}cramiV1.mp4`, alt: "Video 2" },
+  { src: `${import.meta.env.BASE_URL}indulgeV1.mp4`, alt: "Video 1" },
+  { src: `${import.meta.env.BASE_URL}driverV1.mp4`, alt: "Video 2" },
   { src: `${import.meta.env.BASE_URL}cramiV3.mp4`, alt: "Video 3" },
 ];
 
