@@ -14,10 +14,15 @@ import Header from "./Header";
 import { Modal } from "./design/Detail";
 import { ContactMe } from "./design/Contact";
 
+// const videosSlides = [
+//   { src: videoSlides[0], alt: "Video 1" },
+//   { src: videoSlides[1], alt: "Video 2" },
+//   { src: videoSlides[2], alt: "Video 3" },
+// ];
 const videosSlides = [
-  { src: videoSlides[0], alt: "Video 1" },
-  { src: videoSlides[1], alt: "Video 2" },
-  { src: videoSlides[2], alt: "Video 3" },
+  { src: "/more.mp4", alt: "Video 1" },
+  { src: "/cramiV1.mp4", alt: "Video 2" },
+  { src: "/cramiV3.mp4", alt: "Video 3" },
 ];
 
 const Hero = ({ isModalOpen, onCloseModal, onOpenModal }) => {
