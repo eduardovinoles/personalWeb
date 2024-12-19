@@ -4,9 +4,12 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Router basename="/">
+      {" "}
+      {/* Add basename prop */}
+      <App />
+    </Router>
   </React.StrictMode>
 );
