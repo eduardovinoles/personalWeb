@@ -123,6 +123,7 @@ const Benefits = () => {
               }}
               key={item.id}
               onClick={() => {
+                console.log(item.backgroundUrl);
                 if (item.id === "work6") {
                   openVideoModal();
                 } else {
