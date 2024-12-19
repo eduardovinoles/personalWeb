@@ -8,7 +8,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router basename="/">
       {" "}
-      {/* Add basename prop */}
       <App />
     </Router>
   </React.StrictMode>

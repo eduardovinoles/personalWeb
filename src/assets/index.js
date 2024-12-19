@@ -64,12 +64,12 @@ import notification2 from "./notification/image-2.png";
 import notification3 from "./notification/image-3.png";
 import notification4 from "./notification/image-4.png";
 
-import benefitCard1 from "./benefitsImage/card-1.svg";
-import benefitCard2 from "./benefitsImage/card-2.svg";
-import benefitCard3 from "./benefitsImage/card-3.svg";
-import benefitCard4 from "./benefitsImage/card-4.svg";
-import benefitCard5 from "./benefitsImage/card-5.svg";
-import benefitCard6 from "./benefitsImage/card-6.svg";
+import benefitCard1 from "./card-1.svg";
+import benefitCard2 from "./card-2.svg";
+import benefitCard3 from "./card-3.svg";
+import benefitCard4 from "./card-4.svg";
+import benefitCard5 from "./card-5.svg";
+import benefitCard6 from "./card-6.svg";
 import benefitIcon1 from "./benefitsImage/icon-1.svg";
 import benefitIcon2 from "./benefitsImage/icon-2.svg";
 import benefitIcon3 from "./benefitsImage/icon-3.svg";
